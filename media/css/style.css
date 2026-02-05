@@ -10,8 +10,7 @@ header{
     display: flex;
     justify-content: space-between;
     padding:1rem 4rem ;
-    align-items: center;
-    position: fixed;
+    
 }
 
 /* le logo et le titre de la page */
