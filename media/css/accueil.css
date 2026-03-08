@@ -1,153 +1,201 @@
-/*header, marge*/
-.marge{
-    padding: 0.3rem;
-    background-color:#D9D9D9;
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-/* menu avec 4 image */
-
-.menu{
-    width: 100%;
-    background-color: #2B2B2B;
-    display: flex;
-    justify-content: center;
-    padding: 0.7rem;
-}
-.menu  img {
-    padding: 0.1rem;
-    width: 24%;
-    height: auto;
+/* ===== MARGE ===== */
+.marge {
+    height: 6px;
+    background-color: #D9D9D9;
 }
 
+/* ===== MAIN (fond blanc entre sections) ===== */
+main {
+    background-color: white;
+}
 
-/* contenu central */
-.contenu_central{
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* ===== TITRES (sur fond blanc, en dehors des sections) ===== */
+.titre-section {
+    font-family: 'Oswald', 'Arial Black', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    background-color: white;
+    padding: 1.5rem 2rem 1rem 2rem;
+}
+
+/* ===== FONT SUR LE CONTENU DES SECTIONS ===== */
+.section-marque {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-/* hover sur les bouton centraux */
-
-.Brabus_nav:hover{
-    transform: scale(1.03);
-}
-.Mansory_nav:hover{
-    transform: scale(1.03);
-}
-.Abt_nav:hover{
-    transform: scale(1.03);
-}
-.Amg_nav:hover{
-    transform: scale(1.03);
+/* ===== SECTIONS MARQUES ===== */
+.section-marque {
+    padding: 2rem 2rem 2.5rem 2rem;
+    position: relative;
+    margin-bottom: 0;
 }
 
-/* haut, brabus et mansory*/
+/* Ligne colorée en bas de chaque section */
+.section-marque::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
 
-.contenu_haut{
+.section-mansory {
+    background-color: #3a3a3a;
+}
+.section-mansory::after {
+    background-color: #D2B55B;
+}
+
+.section-abt {
+    background-color: #2B2B2B;
+}
+.section-abt::after {
+    background-color: #228BFF;
+}
+
+.section-brabus {
+    background-color: #3a3a3a;
+}
+.section-brabus::after {
+    background-color: #888;
+}
+
+.section-amg {
+    margin-bottom: 3rem;
+    background-color: #2B2B2B;
+}
+.section-amg::after {
+    background-color: #FF2E2E;
+}
+
+/* ===== CONTENU (image + texte) ===== */
+.section-contenu {
     display: flex;
-}
-
-.Brabus_nav{
-    transition: transform 0.3s ease;
-    background-color: #2B2B2B;
-    border-radius: 2rem;
-    border: 0.4rem solid #000000;
-    text-align: center;
-    color: white;
-    font-size: 1.6em;
-    margin:3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
-.Mansory_nav{
-    transition: transform 0.3s ease;
-    background-color: #2B2B2B;
-    border-radius:  2rem;
-    border: 0.4rem solid #D2B55B;
-    text-align: center;
-    color: white;
-   font-size: 1.6em;
-    margin:3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
-/* bas, abt et amg*/
-
-.contenu_bas{
-    display: flex;
-}
-
-.Abt_nav{
-    transition: transform 0.3s ease;
-    background-color: #2B2B2B;
-    border-radius:  2rem;
-    border: 0.4rem solid #228BFF;
-    text-align: center;
-    color: white;
-    font-size: 1.6em;
-    margin:3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-.Amg_nav{
-    transition: transform 0.3s ease;
-    background-color: #2B2B2B;
-    border-radius:  2rem;
-    border: 0.4rem solid #FF2E2E;
-    text-align: center;
-    color: white;
-    font-size: 1.6em;
-    margin:3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
-
-@media (max-width: 393px){
-.menu img{
-    width: 23%;
-    }
-.menu .image{
-    display: flex;
-    flex-direction: row;
     align-items: center;
+    gap: 2rem;
 }
-.contenu_haut,
-  .contenu_bas {
-    flex-direction: column;
-    align-items: center;
-  }
 
+.section-contenu.reverse {
+    flex-direction: row-reverse;
+}
 
-  .Brabus_nav img,
-  .Mansory_nav img,
-  .Abt_nav img,
-  .Amg_nav img {
-    width: 80%;
+.section-image {
+    flex: 1;
+    min-width: 0;
+}
+
+.section-image img {
+    width: 100%;
     height: auto;
-  }
+    display: block;
+    border-radius: 4px;
+    object-fit: contain;
+}
 
+.section-texte {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
-  .Brabus_nav,
-  .Mansory_nav,
-  .Abt_nav,
-  .Amg_nav {
-    margin: 20px 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 20px;
-  }
+.section-texte p {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
 
-  .contenu_central {
-    padding: 20px;
-  }
+.sous-titre-marque {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1rem !important;
+    margin-bottom: 0.3rem;
+}
 
+/* ===== BOUTONS ===== */
+.section-boutons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    border: 2px solid;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: 0.03em;
+    transition: background-color 0.2s, color 0.2s;
+    background-color: transparent;
+}
+
+.btn-mansory {
+    color: #D2B55B;
+    border-color: #D2B55B;
+}
+.btn-mansory:hover {
+    background-color: #D2B55B;
+    color: #1a1a1a;
+}
+
+.btn-abt {
+    color: #228BFF;
+    border-color: #228BFF;
+}
+.btn-abt:hover {
+    background-color: #228BFF;
+    color: white;
+}
+
+.btn-brabus {
+    color: white;
+    border-color: #888;
+}
+.btn-brabus:hover {
+    background-color: #888;
+    color: #1a1a1a;
+}
+
+.btn-amg {
+    color: #FF2E2E;
+    border-color: #FF2E2E;
+}
+.btn-amg:hover {
+    background-color: #FF2E2E;
+    color: white;
+}
+
+.brabus_footer { color: #ccc; }
+.mansory_footer { color: #D2B55B; }
+.abt_footer { color: #228BFF; }
+.amg_footer { color: #FF2E2E; }
+.auteur { color: #aaa; }
+.contact { color: #aaa; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .section-contenu,
+    .section-contenu.reverse {
+        flex-direction: column;
+    }
+
+    .titre-section {
+        font-size: 1.4rem;
+    }
 }
