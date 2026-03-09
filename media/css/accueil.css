@@ -109,19 +109,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    color: #ffffff;
 }
 
 .section-texte p {
-    color: #aaa;
+    color: #ffffff;
     font-size: 0.9rem;
     line-height: 1.5;
-}
-
-.sous-titre-marque {
-    color: white !important;
-    font-weight: bold;
-    font-size: 1rem !important;
-    margin-bottom: 0.3rem;
+        font-family: 'Oswald', 'Arial Black', Arial, sans-serif;
 }
 
 /* ===== BOUTONS ===== */
